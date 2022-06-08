@@ -1,15 +1,8 @@
 const Square = ({id, player}) => {
-  const [color, setColor] = React.useState('navy');
-  const palet = ['white', 'green', 'red'];
-  const getRandomColor = () => palet[Math.floor(Math.random() * 3)];
   
   return(
-    <button 
-      onClick= {(e) => {
-      setColor(getRandomColor());
-      e.target.style.background = color;
-    }}>
-    <h1>{id}</h1>
+    <button onClick={() =>{alert(`I'm Square ${id}`)}}>
+    <h1>{player}</h1>
     </button>
   )
 }
@@ -18,7 +11,7 @@ const Board = () => {
   const [player, setPlayer] = React.useState(1);
   let status = `Player ${player}`;
   function renderSquare(i) {
-    return <Square id={i}></Square>
+    return <Square id={i} player={player}></Square>
   }
   return (
     <div
