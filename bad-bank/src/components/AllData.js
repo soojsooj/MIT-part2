@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import { UserContext } from '../context/UserContext'
 
 const AllData = () => {
-   const user = useState(UserContext);
+   const user = useContext(UserContext);
     return (
       <div>
           <h3>All Data</h3>

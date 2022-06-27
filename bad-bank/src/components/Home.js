@@ -6,7 +6,7 @@ const Home = () => {
     const user = useContext(UserContext);
   return (
     <div>
-        <h3>Home</h3>
+        <h3>Welcome to Bad Bank</h3>
         {JSON.stringify(user)}
     </div>
   )

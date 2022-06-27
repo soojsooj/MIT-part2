@@ -1,16 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
     <div>
-        <a href="/">BadBank</a>,
-        <a href="/createaccount/">Create Account</a>,
-        <a href="/login/">Login</a>,
-        <a href="/deposit/">Deposit</a>,
-        <a href="/withdraw/">Withdraw</a>,
-        <a href="/balance/">Balance</a>,
-        <a href="/alldata/">AllData</a>,
-        <a href="/userpage/">UserPage</a>
+        <Link to="/">BadBank</Link>
+        <Link to="/createaccount">Create Account</Link>
+        <Link to="/login">Login</Link>
+        <Link to="/deposit">Deposit</Link>
+        <Link to="/withdraw">Withdraw</Link>
+        <Link to="/balance">Balance</Link>
+        <Link to="/alldata">All Data</Link>
     </div>
   )
 }
