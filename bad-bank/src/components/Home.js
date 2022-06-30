@@ -1,12 +1,13 @@
 import React, { useContext } from 'react'
 import { UserContext } from '../context/UserContext'
-import CardElement from '../context/UserContext'
+import CardElement from './cards/CardElement'
+
 
 const Home = () => {
   return (
     <div>
         <CardElement />
-        <h3>Welcome to Bad Bank</h3>  
+        <h3>Welcome to Bad Bank</h3> 
     </div>
   )
 }

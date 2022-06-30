@@ -14,7 +14,7 @@ const NavbarElements = () => {
           <Nav.Link href="/withdraw">Withdraw</Nav.Link>
           <Nav.Link href="/balance">Balance</Nav.Link>
           <Nav.Link href="/alldata">AllData</Nav.Link>
-          <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+          {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">
               Another action
@@ -24,7 +24,7 @@ const NavbarElements = () => {
             <NavDropdown.Item href="#action/3.4">
               Separated link
             </NavDropdown.Item>
-          </NavDropdown>
+          </NavDropdown> */}
         </Nav>
         <Nav>
         <Nav.Link href="/createaccount">Create Account</Nav.Link>

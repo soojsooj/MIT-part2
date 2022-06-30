@@ -1,5 +1,7 @@
 import React, { useContext } from 'react'
-import { UserContext } from '../context/UserContext'
+import CardElement, { UserContext } from '../context/UserContext'
+import NavbarElements from './navbar/NavbarElements';
+
 
 const Deposit = () => {
     const user = useContext(UserContext);
