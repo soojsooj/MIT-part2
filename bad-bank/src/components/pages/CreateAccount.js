@@ -1,13 +1,20 @@
 import React, { useContext, useState } from 'react'
-import { UserContext } from '../context/UserContext'
+
 import { Form, Button, Container } from 'react-bootstrap'
 
-const CreateAccount = () => {
-    const user = useContext(UserContext);
+const CreateAccount = ({setAuthenticate}) => {
+    
+    
+    const createUsersAccount = (event) => {
+      event.preventDefault();
+      setAuthenticate(true);
+      alert('Successfully created account')
+    }
     return (
-        <Container className='myform'>
+      <div className='myform'>
+        <Container>
           <h3>CREATE ACCOUNT</h3>
-          <Form className='submitform'>
+          <Form className='submitform' onSubmit={(event)=> createUsersAccount(event)}>
               <Form.Group className="mb-3" controlId="formBasicName">
                 <Form.Label>Name</Form.Label>
                 <Form.Control type="text" placeholder="Enter name" />
@@ -24,10 +31,11 @@ const CreateAccount = () => {
               </Form.Group>
 
               <Button variant="primary" type="submit">
-                Add Another Account
+                Creat Account
               </Button>
           </Form>
         </Container>
+        </div>
     )
 }
 

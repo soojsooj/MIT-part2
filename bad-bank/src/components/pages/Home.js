@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
-import { UserContext } from '../context/UserContext'
-import CardElement from './cards/CardElement'
+import { UserContext } from '../../context/BankContext'
+import CardElement from '../cards/CardElement'
 
 
 const Home = () => {

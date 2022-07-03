@@ -1,41 +1,40 @@
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Routes, Route, BrowserRouter, Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.js'
-import AllData from './components/AllData';
-import Balance from './components/Balance'
-import CreateAccount from './components/CreateAccount'
-import Deposit from './components/Deposit'
-import Home from './components/Home'
-import Withdraw from './components/Withdraw'
-import Login from './components/Login'
-import { UserContext } from './context/UserContext'
+
+import Home from './components/pages/Home'
+import Balance from './components/pages/Balance';
+import Deposit from './components/pages/Deposit'
+import Withdraw from './components/pages/Withdraw'
+import AllData from './components/pages/AllData'
+import Login from './components/pages/Login'
+import CreateAccount from './components/pages/CreateAccount'
+import NotFound from './components/pages/NotFound';
+
+import { BankProvider } from './context/BankContext';
 import NavbarElements from './components/navbar/NavbarElements';
-import CardElement from './components/cards/CardElement';
-import { Card } from 'react-bootstrap';
+
 
 
 function App() { 
-  const [authenticate, setAuthenticate]= useState(false);
-  useEffect(() => {
-    console.log("aaa", authenticate)
-  }, [authenticate])
-    return (
+  return(
       <div>
         <BrowserRouter>
           <NavbarElements />
-          <UserContext.Provider value={{users: [{name: 'soojin', email: 'huh.soojin@gmail.com', password: 'asdfasdf', balance: 100}]}}>
+          <BankProvider value={{users: [{name: 'soojin', email: 'huh.soojin@gmail.com', password: 'asdfasdf', balance: 100}]}}>
             <Routes> 
               <Route path='/' element={<Home />} />
               <Route path="/createaccount/" element={<CreateAccount/>} />
-              <Route path="/login/" element={<Login setAuthenticate={setAuthenticate} />} />
+              <Route path="/login/" element={<Login />} />
               <Route path="/deposit/" element={<Deposit/>} />
               <Route path= "/withdraw/" element={<Withdraw/>} />
               <Route path="/balance/" element={<Balance/>} />
               <Route path="/alldata/" element={<AllData/>} />
+              <Route path="*" element={<NotFound/>} />
             </Routes>
-           </UserContext.Provider>
+           </BankProvider>
           </BrowserRouter>
       </div>
   );
