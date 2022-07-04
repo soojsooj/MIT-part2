@@ -3,7 +3,7 @@ import React from 'react'
 import Content from './Content'
 import Header from './Header'
 import Footer from './Footer'
-import { ThemeContext } from '../context/ThemeContext'
+
 
 const Page = () => {
   return (
