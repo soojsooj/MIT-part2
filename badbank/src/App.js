@@ -16,32 +16,33 @@ import AllData from './components/pages/AllData';
 //context
 import { UserContext } from './context/UserContext';
 
+
 function App() {
   
   return (
     <div>
       <MyNavBar/>
-      <UserContext.Provider value={
-          {users:[
-            { name:'soojin',
-              email:'huh.soojin@gmail.com',
-              password:'secret',
-              balance:100}
-              ]
-          }
-        }>
-        <div className="container" style={{padding: "20px"}}>
-          <Routes>
-            <Route path="/"  element={<Home />} />
-            <Route path="/CreateAccount/" element={<CreateAccount />} />
-            <Route path="/login/" element={<Login />} />
-            <Route path="/deposit/" element={<Deposit />} />
-            <Route path="/withdraw/" element={<Withdraw />} />
-            <Route path="/balance/" element={<Balance />} />
-            <Route path="/alldata/" element={<AllData />} />
-          </Routes>
-        </div>
-      </UserContext.Provider>  
+        <UserContext.Provider value={
+            {users:[
+              { name:'soojin',
+                email:'huh.soojin@gmail.com',
+                password:'secret',
+                balance:100}
+                ]
+            }
+          }>
+          <div className="container" style={{padding: "20px"}}>
+            <Routes>
+              <Route path="/"  element={<Home />} />
+              <Route path="/CreateAccount/" element={<CreateAccount />} />
+              <Route path="/login/" element={<Login />} />
+              <Route path="/deposit/" element={<Deposit />} />
+              <Route path="/withdraw/" element={<Withdraw />} />
+              <Route path="/balance/" element={<Balance />} />
+              <Route path="/alldata/" element={<AllData />} />
+            </Routes>
+          </div>
+        </UserContext.Provider>
     </div>
   );
 }

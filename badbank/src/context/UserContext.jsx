@@ -1,7 +1,8 @@
-// useContext hook: eg. User, Theme, Language.
+// useContext hook: e.g. User, Theme, Language.
 import { createContext } from 'react';
 
 export const UserContext = createContext(null);
+export { Card };
 
 function Card(props){
     function classes(){
