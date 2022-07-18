@@ -1,66 +1,62 @@
-import React from 'react'
-import { UserContext } from '../context/UserContext'
-import { useContext } from 'react'
+import React, { useContext } from 'react'
+import { useBankContext } from '../context/BankContext'
+import { Card } from '../context/CardContext'
+import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom'
+
+
+// const AllData = () => {
+//   const { bank } = useBankContext();
+
+//   return (
+//     <div>
+//       {JSON.stringify(bank, null, 2)}
+//     </div>
+//   )
+// }
+
+// export default AllData
 
 const AllData = () => {
-  const data = useContext(UserContext);
+ const { bank } = useBankContext();
+
   return (
-    // <Container>
-    //   <Card 
-    //     txtcolor='black'
-    //     header="All Data"
-     
-    //   />
-    // </Container>
-    <div>
-      AllData<br/>
-      {JSON.stringify(data)}
-    </div>
+    <Container>
+    {JSON.stringify(bank, null, 2)}
+     {bank.users ? (
+        <Card
+            txtcolor='black'
+            header="User Data"
+            status=""
+            body={
+                <>
+                    <div>
+                        Username: {bank.users.username} <br />
+                        Password: {bank.users.password} <br />
+                        <strong>Balance:</strong> ${bank.users.balance} <br />
+                    </div>
+                    
+                    {/* <div>
+                        <p><strong>Transactions:</strong></p>
+                        {
+                            ctx.transactions.map((item, index) => <div key={index}>{item.transaction}: ${item.amount}</div>)
+                        }
+                    </div> */}
+                    
+                    {/* <div>
+                        <strong>Balance:</strong> ${bank.users.balance}
+                    </div> */}
+                </>
+            } />
+            ) : (
+        <Card
+              txtcolor= "black"
+              header="Please create an account"
+              status=''
+              body={<><Link to="/createaccount">Create an account</Link></>} />
+      )}
+  </Container>
   )
 }
 
 export default AllData
-
-// import { useContext } from 'react'
-// import { Link } from 'react-router-dom'
-// import { Card, UserContext } from '../../context/context'
-
-// const AllData = () => {
-//     const ctx = useContext(UserContext)
-//     return (
-//         <div>
-//             {ctx.name ? (
-//                 <Card
-//                     header="User Data"
-//                     status=""
-//                     body={
-//                         <>
-//                             <div className="user-info-container">
-//                                 Name: {ctx.name} <br />
-//                                 Email: {ctx.email} <br />
-//                                 Password: {ctx.password} <br />
-//                                 Balance: {ctx.balance} <br />
-//                             </div>
-//                             <hr />
-//                             <div className="transaction-history">
-//                                 <p><strong>Transactions:</strong></p>
-//                                 {
-//                                     ctx.transactions.map((item, index) => <div key={index}>{item.transaction}: ${item.amount}</div>)
-//                                 }
-//                             </div>
-//                             <hr />
-//                             <div className="balance">
-//                                 <strong>Balance:</strong> ${ctx.balance}
-//                             </div>
-//                         </>
-//                     } />
-//             ) : (
-//                 <Card
-//                     header="Please create an account"
-//                     status=''
-//                     body={<><Link to="/create">Create an account</Link></>} />
-//             )}
-//         </div >
-//     )
-// }
-// export default AllData

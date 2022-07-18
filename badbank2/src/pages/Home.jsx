@@ -5,7 +5,7 @@ import { Card } from '../context/CardContext'
 
 
 const Home = () => {
-  // const data = useContext(UserContext)
+  // const ctx = useContext(UserContext)
 
   return (
     <Container>

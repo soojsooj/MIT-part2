@@ -1,10 +1,10 @@
 import React, {useContext} from 'react'
 import {Container} from 'react-bootstrap'
-import { UserContext } from '../context/UserContext'
+import { UserContext } from '../context/BankContext'
 import { Card } from '../context/CardContext'
 
 const Withdraw = () => {
-  const data = useContext(UserContext);
+  // const ctx = useContext(UserContext);
 
   return (
     <Container>
